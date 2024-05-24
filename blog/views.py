@@ -41,6 +41,7 @@ class PostUpdateView(LoginRequiredMixin,DoesUserOwnPostMixim, UpdateView):
     def form_valid(self, form):
         form.instance.author = self.request.user 
         return super().form_valid(form)
+    
 
 
 class PostDeleteView(LoginRequiredMixin, DoesUserOwnPostMixim, DeleteView):
